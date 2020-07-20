@@ -102,7 +102,7 @@ public class ClienteJDBCDAO implements IClienteDao {
             ps.setString(5, cli.getFax());
             ps.setString(6, cli.getEmail());
             ps.setString(7, cli.getCelular());
-            ps.setString(7, cli.getFijo());
+            ps.setString(8, cli.getFijo());
             
             ps.executeUpdate();
             
@@ -126,16 +126,17 @@ public class ClienteJDBCDAO implements IClienteDao {
         BaseDatosMS conecxion = new BaseDatosMS();
         
         try {
-            String sql = "UPDATE clientes SET cedula_ruc = ?, nombrecia = ?, nombrecontacto = ?, direccioncli = ?, fax = ?, email = ?, celular = ?, fijo = ?";
+            String sql = "UPDATE clientes SET cedula_ruc = ?, nombrecia = ?, nombrecontacto = ?, direccioncli = ?, fax = ?, email = ?, celular = ?, fijo = ? WHERE clienteid = ?";
             PreparedStatement ps = conecxion.getConnection().prepareStatement(sql);
             ps.setString(1, cli.getCedulaRuc());
             ps.setString(2, cli.getNombreCia());
             ps.setString(3, cli.getNombreContacto());
             ps.setString(4, cli.getDireccionCli());
             ps.setString(5, cli.getFax());
-            ps.setString(6, cli.getCelular());
-            ps.setString(6, cli.getFijo());
-            
+            ps.setString(6, cli.getEmail());
+            ps.setString(7, cli.getCelular());
+            ps.setString(8, cli.getFijo());
+            ps.setLong(9, cli.getClienteId());
             ps.executeUpdate();
             
             mensaje = "Cliente actualizado correctamente";

@@ -30,6 +30,19 @@ public class Cliente {
         this.fijo = fijo;
     }
 
+    public Cliente(String cedulaRuc, String nombreCia, String nombreContacto, String direccionCli, String fax, String email, String celular, String fijo) {
+        this.cedulaRuc = cedulaRuc;
+        this.nombreCia = nombreCia;
+        this.nombreContacto = nombreContacto;
+        this.direccionCli = direccionCli;
+        this.fax = fax;
+        this.email = email;
+        this.celular = celular;
+        this.fijo = fijo;
+    }
+    
+    
+
     public String getFijo() {
         return fijo;
     }

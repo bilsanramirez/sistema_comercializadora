@@ -193,6 +193,14 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/sistema_comercializadora/clientes" class="nav-link">
+                                    <%-- <i class="nav-icon far fa-image"></i> --%>
+                                    <p>
+                                        Clientes
+                                    </p>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                     <!-- /.sidebar-menu -->
