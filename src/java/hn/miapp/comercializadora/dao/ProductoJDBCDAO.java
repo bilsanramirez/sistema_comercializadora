@@ -183,7 +183,7 @@ public class ProductoJDBCDAO implements IProductoDao {
         BaseDatosMS conexion = new BaseDatosMS();
 
         try {
-            String sql = "SELECT * FROM clientes WHERE categoriaid = ?";
+            String sql = "SELECT * FROM productos WHERE categoriaid = ?";
             PreparedStatement ps = conexion.getConnection().prepareStatement(sql);
             ps.setLong(1, cat.getCategoriaId());
 

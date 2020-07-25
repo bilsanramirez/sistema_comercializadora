@@ -1,7 +1,9 @@
 package hn.miapp.comercializadora.controllers;
 
 import hn.miapp.comercializadora.dao.CategoriaJDBCDAO;
+import hn.miapp.comercializadora.dao.ProductoJDBCDAO;
 import hn.miapp.comercializadora.modelos.Categoria;
+import hn.miapp.comercializadora.modelos.Producto;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -29,6 +31,8 @@ public class CategoriasController extends HttpServlet {
                 case "editar":
                     formEditar(request, response);
                     break;
+                case "productos":
+                    formVerProductos(request, response);
             }
 
         } else {
@@ -100,39 +104,53 @@ public class CategoriasController extends HttpServlet {
 
     }
 
-    private void actualizarCategoria(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-        
+    private void actualizarCategoria(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         Categoria categoria = new Categoria();
         CategoriaJDBCDAO categoriaJDBCDAO = new CategoriaJDBCDAO();
         String mensaje = "";
-        
+
         long idCat = Long.parseLong(request.getParameter("categoriaId"));
         String nombreCat = request.getParameter("nombreCat");
-        
+
         categoria.setCategoriaId(idCat);
         categoria.setNombreCat(nombreCat);
-        
+
         mensaje = categoriaJDBCDAO.update(categoria);
-        
-        
+
         request.getSession().setAttribute("operacionCategoria", mensaje);
 
         response.sendRedirect("/sistema_comercializadora/categorias");
-   
+
     }
 
     private void borrarCategoria(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+
         String mensaje = null;
         CategoriaJDBCDAO categoriaJDBCDAO = new CategoriaJDBCDAO();
-        
+
         long idCat = Long.parseLong(request.getParameter("idCat"));
-        
+
         mensaje = categoriaJDBCDAO.delete(new Categoria(idCat));
-        
+
         request.getSession().setAttribute("operacionCategoria", mensaje);
-        
+
         response.sendRedirect("/sistema_comercializadora/categorias");
+
+    }
+
+    private void formVerProductos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        CategoriaJDBCDAO daoCategoria = new CategoriaJDBCDAO();
+        long idCat = Long.parseLong(request.getParameter("idCat"));
+        ProductoJDBCDAO daoProducto = new ProductoJDBCDAO();
         
+        Categoria cat = daoCategoria.findById(idCat);
+
+        List<Producto> listaProductosCategorias = daoProducto.getProductosByCategoria(cat);
+        
+        cat.setProductos(listaProductosCategorias);
+
+        request.setAttribute("categoria", cat);
+        request.getRequestDispatcher("WEB-INF/categorias/show.jsp").forward(request, response);
     }
 }

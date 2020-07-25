@@ -43,6 +43,7 @@
                                 <td>${categoria.categoriaId}</td>
                                 <td>${categoria.nombreCat}</td>
                                 <td>
+                                    <a href="categorias?accion=productos&idCat=${categoria.categoriaId}" class="btn  btn-info">Productos</a>
                                     <a href="categorias?accion=editar&idCat=${categoria.categoriaId}" class="btn btn-primary">Editar</a>
                                     <form action="categorias" method="post" class="d-inline">
                                         <input type="hidden" name="accion" value="borrar"/>

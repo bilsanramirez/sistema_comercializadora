@@ -1,9 +1,12 @@
 package hn.miapp.comercializadora.modelos;
 
+import java.util.List;
+
 public class Categoria {
     
     private long categoriaId;
     private String nombreCat;
+    private List<Producto> productos;
 
     public Categoria() {
     }
@@ -32,5 +35,15 @@ public class Categoria {
     public void setNombreCat(String nombreCat) {
         this.nombreCat = nombreCat;
     }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+    
+    
     
 }
