@@ -201,6 +201,14 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/sistema_comercializadora/productos" class="nav-link">
+                                    <%-- <i class="nav-icon far fa-image"></i> --%>
+                                    <p>
+                                        Productos
+                                    </p>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                     <!-- /.sidebar-menu -->

@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/dao/ClienteJDBCDAO.java</file>
+            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/web/WEB-INF/productos/index.jsp</file>
+            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/modelos/Producto.java</file>
+            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/web/WEB-INF/productos/form.jsp</file>
+            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/dao/ProductoJDBCDAO.java</file>
+            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/controllers/ProductosController.java</file>
         </group>
     </open-files>
 </project-private>

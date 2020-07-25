@@ -3,12 +3,38 @@ package hn.miapp.comercializadora.modelos;
 public class Producto {
 
     private long productoId;
-    private long proveedorId;
-    private long categoriaId;
+    private Proveedor proveedorId;
+    private Categoria categoriaId;
     private String descripcion;
     private double precioUnit;
     private int existencia;
 
+    public Producto() {
+        
+    }
+
+    public Producto(long productoId) {
+        this.productoId = productoId;
+    }
+    
+    public Producto(long productoId, Proveedor proveedorId, Categoria categoriaId, String descripcion, double precioUnit, int existencia) {
+        this.productoId = productoId;
+        this.proveedorId = proveedorId;
+        this.categoriaId = categoriaId;
+        this.descripcion = descripcion;
+        this.precioUnit = precioUnit;
+        this.existencia = existencia;
+    }
+
+    public Producto(Proveedor proveedorId, Categoria categoriaId, String descripcion, double precioUnit, int existencia) {
+        this.proveedorId = proveedorId;
+        this.categoriaId = categoriaId;
+        this.descripcion = descripcion;
+        this.precioUnit = precioUnit;
+        this.existencia = existencia;
+    }
+
+    
     public long getProductoId() {
         return productoId;
     }
@@ -17,19 +43,19 @@ public class Producto {
         this.productoId = productoId;
     }
 
-    public long getProveedorId() {
+    public Proveedor getProveedorId() {
         return proveedorId;
     }
 
-    public void setProveedorId(long proveedorId) {
+    public void setProveedorId(Proveedor proveedorId) {
         this.proveedorId = proveedorId;
     }
 
-    public long getCategoriaId() {
+    public Categoria getCategoriaId() {
         return categoriaId;
     }
 
-    public void setCategoriaId(long categoriaId) {
+    public void setCategoriaId(Categoria categoriaId) {
         this.categoriaId = categoriaId;
     }
 
