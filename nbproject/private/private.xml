@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/web/WEB-INF/categorias/index.jsp</file>
-            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/web/WEB-INF/categorias/show.jsp</file>
-            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/modelos/Producto.java</file>
-            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/modelos/Categoria.java</file>
-            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/controllers/CategoriasController.java</file>
-            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/dao/ProductoJDBCDAO.java</file>
+            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/web/WEB-INF/pedidos/index.jsp</file>
+            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/dao/OrdenJDBCDAO.java</file>
+            <file>file:/C:/Users/Kubuntu/Documents/NetBeansProjects/sistema-comercializadora/src/java/hn/miapp/comercializadora/controllers/PedidosController.java</file>
         </group>
     </open-files>
 </project-private>

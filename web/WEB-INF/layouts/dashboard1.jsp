@@ -209,6 +209,14 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/sistema_comercializadora/pedidos" class="nav-link">
+                                    <%-- <i class="nav-icon far fa-image"></i> --%>
+                                    <p>
+                                        Pedidos
+                                    </p>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                     <!-- /.sidebar-menu -->

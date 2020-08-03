@@ -1,15 +1,46 @@
 package hn.miapp.comercializadora.modelos;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 public class Orden {
     private long ordenId;
-    private long empleadoId;
-    private long clienteId;
+    private Empleado empleado;
+    private Cliente cliente;
     private Date fechaOrden;
-    private int descuento;
+    private double descuento;
+    private double importe;
+    private String importeRedondeado;
+    private List<DetalleOrden> detalles = new ArrayList<>();
+    private List<DetalleOrden> detallesOrden;
 
+    public Orden() {
+    }
+
+    
+    
+    public Orden(long ordenId, Empleado empleado, Cliente cliente, Date fechaOrden, double descuento, double importe) {
+        this.ordenId = ordenId;
+        this.empleado = empleado;
+        this.cliente = cliente;
+        this.fechaOrden = fechaOrden;
+        this.descuento = descuento;
+        this.importe = importe;
+    }
+    
+    public Orden(long ordenId, Empleado empleado, Cliente cliente, Date fechaOrden, double descuento, double importe, String importeRedondeado) {
+        this.ordenId = ordenId;
+        this.empleado = empleado;
+        this.cliente = cliente;
+        this.fechaOrden = fechaOrden;
+        this.descuento = descuento;
+        this.importe = importe;
+        this.importeRedondeado = importeRedondeado;
+    }
+    
     public long getOrdenId() {
         return ordenId;
     }
@@ -18,20 +49,20 @@ public class Orden {
         this.ordenId = ordenId;
     }
 
-    public long getEmpleadoId() {
-        return empleadoId;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setEmpleadoId(long empleadoId) {
-        this.empleadoId = empleadoId;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
-    public long getClienteId() {
-        return clienteId;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setClienteId(long clienteId) {
-        this.clienteId = clienteId;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Date getFechaOrden() {
@@ -42,13 +73,44 @@ public class Orden {
         this.fechaOrden = fechaOrden;
     }
 
-    public int getDescuento() {
+    public double getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(int descuento) {
+    public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
-    
-    
+
+    public double getImporte() {
+        return importe;
+    }
+
+    public void setImporte(double importe) {
+        this.importe = importe;
+    }
+
+    public String getImporteRedondeado() {
+        return new DecimalFormat("#.##").format(importe);
+    }
+
+    public void setImporteRedondeado(String importeRedondeado) {
+        this.importeRedondeado = importeRedondeado;
+    }
+
+    public List<DetalleOrden> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(List<DetalleOrden> detalles) {
+        this.detalles = detalles;
+    }
+
+    public List<DetalleOrden> getDetallesOrden() {
+        return detallesOrden;
+    }
+
+    public void setDetallesOrden(List<DetalleOrden> detallesOrden) {
+        this.detallesOrden = detallesOrden;
+    }
+  
 }

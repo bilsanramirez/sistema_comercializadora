@@ -1,11 +1,47 @@
 package hn.miapp.comercializadora.modelos;
 
+import java.text.DecimalFormat;
+
 
 public class DetalleOrden {
+    
     private long detalleId;
-    private long ordenId;
-    private long productoId;
-    private int cantidad;
+    private Orden orden;
+    private Producto producto;
+    private double cantidad;
+    private double importe;
+    private String importeRedondeado;
+
+    public DetalleOrden() {
+    }
+
+    public DetalleOrden(long detalleId, Producto producto, double cantidad, double importe) {
+        this.detalleId = detalleId;
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.importe = importe;
+    }
+
+    
+    
+    public DetalleOrden(long detalleId, Orden orden, Producto producto, double cantidad, double importe, String importeRedondeado) {
+        this.detalleId = detalleId;
+        this.orden = orden;
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.importe = importe;
+        this.importeRedondeado = importeRedondeado;
+    }
+
+    
+    
+    public DetalleOrden(long detalleId, Orden orden, Producto producto, double cantidad, double importe) {
+        this.detalleId = detalleId;
+        this.orden = orden;
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.importe = importe;
+    }
 
     public long getDetalleId() {
         return detalleId;
@@ -15,28 +51,46 @@ public class DetalleOrden {
         this.detalleId = detalleId;
     }
 
-    public long getOrdenId() {
-        return ordenId;
+    public Orden getOrden() {
+        return orden;
     }
 
-    public void setOrdenId(long ordenId) {
-        this.ordenId = ordenId;
+    public void setOrden(Orden orden) {
+        this.orden = orden;
     }
 
-    public long getProductoId() {
-        return productoId;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setProductoId(long productoId) {
-        this.productoId = productoId;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
-    public int getCantidad() {
+    public double getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(double cantidad) {
         this.cantidad = cantidad;
     }
+
+    public double getImporte() {
+        return importe;
+    }
+
+    public void setImporte(double importe) {
+        this.importe = importe;
+    }
+
+    public String getImporteRedondeado() {
+        return new DecimalFormat("#.##").format(importe);
+    }
+
+    public void setImporteRedondeado(String importeRedondeado) {
+        this.importeRedondeado = importeRedondeado;
+    }
+    
+    
     
 }
